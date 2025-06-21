@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1.0">
+  <title>식품렌즈 - 어린이용</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="top-title-row"></div>
+    <div class="mascot-row">
+      <img src="헬씨.png" alt="헬씨 마스코트" class="mascot">
+    </div>
+    <h1>🍎 식품렌즈</h1>
+    <div class="main-title" style="margin-bottom:10px;">사진을 찍어 음식 정보 알아보기</div>
+    <p class="desc">카메라로 음식 사진을 찍으면 이름과 영양소가 뿅!<br><span style="font-size:1.2em;">(어린이 친구들을 위한 건강 도우미)</span></p>
+    <div class="camera-area camera-area-flex">
+      <video id="camera" width="320" height="240" autoplay></video>
+      <div class="camera-btn-row">
+        <button id="capture">📸 사진 찍기</button>
+        <button id="modelInfoBtn" class="model-info-btn" aria-label="음성안내">
+          <img src="speaker.png" alt="음성안내" class="speak-btn-img">
+          <div class="voice-label">음성안내</div>
+        </button>
+      </div>
+    </div>
+    <div class="result-area">
+      <img id="resultImage" style="display:none;"/>
+      <div id="foodName" class="food-name"></div>
+      <div id="nutritionInfo" class="nutrition-info"></div>
+    </div>
+  </div>
+  <canvas id="snapshot" width="320" height="240" style="display:none;"></canvas>
+  <button onclick="window.speechSynthesis.speak(new SpeechSynthesisUtterance('테스트 음성입니다.'))">음성 테스트</button>
+  <script src="script.js"></script>
+</body>
+</html>
